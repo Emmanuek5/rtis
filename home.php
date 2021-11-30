@@ -8,6 +8,9 @@ include 'function.php';
 
     $and = array('Name' =>$user_data['name'] ,
                 'Password' => $user_data['password'],
+                'email' => $user_data['email'],
+                'image' => $user_data['image'],
+
 
 
 
@@ -16,7 +19,7 @@ include 'function.php';
 
 
             );
-    print_r($and);
+   print_r($and);
 
 
 

@@ -6,6 +6,7 @@ if (isset($_POST['session'])) {
 	
   $name = $_POST['name'];
   $password = $_POST['password'];
+  $email = $_POST['email'];
   $filename = $_FILES['file']['name'];
   $file_tmp = $_FILES['file']['tmp_name'];
   $file_new_name = time().date('dmy').$_FILES['file']['name'];
@@ -21,7 +22,7 @@ if (mysqli_num_rows($result) > 0) {
 }else{
  $user_id = rand();
 
- $sql = "INSERT INTO `users`( `user_id`, `name`,`password`,`image`) VALUES ('$user_id','$name','$password','$file_new_name')";
+ $sql = "INSERT INTO `users`( `user_id`, `name`,`password`,`email`,`image`) VALUES ('$user_id','$name','$password','$email','$file_new_name')";
  move_uploaded_file($file_tmp,$location);
 
  mysqli_query($con,$sql);
