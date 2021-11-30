@@ -6,6 +6,9 @@ include 'function.php';
 
     $user_data = check_login($con);
 
+    $and = array('Name' =>$user_data['name'] , );
+    
+
 
 
 ?>
