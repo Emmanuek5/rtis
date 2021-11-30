@@ -6,8 +6,18 @@ include 'function.php';
 
     $user_data = check_login($con);
 
-    $and = array('Name' =>$user_data['name'] , );
-    
+    $and = array('Name' =>$user_data['name'] ,
+                'Password' => $user_data['password'],
+
+
+
+
+
+
+
+            );
+    print_r($and);
+
 
 
 
