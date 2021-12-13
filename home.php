@@ -53,17 +53,7 @@ if (isset($_POST['app'])) {
 
 
 
-<form method="POST" enctype="multipart/form-data" autocomplete="off">
-    <label>App Name</label><br>
-   <br><input type="text" name="appname"><br>
-   <br><label>App Description</label><br>
-    <br><textarea  name="appdes" rows="10"></textarea>
-    <br><input type="file" name="file"><br>
-    <br><input type="submit" name="app" value="Create App">
 
-
-    
-</form>
 
 
 
