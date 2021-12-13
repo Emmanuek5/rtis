@@ -1,11 +1,14 @@
 <?php  
 session_start();
 include 'config.php';
+include 'function.php';
+
 
 if (isset($_POST['session'])) {
 	
   $name = $_POST['name'];
-  $password = $_POST['password'];
+  $password = trim($_POST['password']);
+
 
  
 
@@ -14,16 +17,16 @@ if (isset($_POST['session'])) {
 
 $result =  mysqli_query($con,$sql);
 $row = mysqli_fetch_assoc($result);
+$hashpassword = $row['password'];
 
 if (mysqli_num_rows($result) < 1 ) {
 	echo "User Not Found";
 }else{
-
-if ($password == $row['password']) {
+  
+if (password_verify($password,$hashpassword)) {
 	
-	$_SESSION['success'] = $row;
-	print_r($_SESSION);
 
+    $_SESSION['success'] = $row;
 	header('location: /rtis/');
 
 
@@ -53,15 +56,20 @@ if ($password == $row['password']) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="./css/login.css">
 </head>
 <body>
 	<form method="POST">
-		<input type="text" name="name">
-		<input type="password" name="password">
-		<input type="submit" name="session">
+		<label>Name</label>
+		<br><input type="text" name="name"><br>
+		<br><label>Password</label>
+		<br><input type="password" name="password"><br>
+
+		<br><input type="submit" class="btn" name="session" value="Login">
+		<br><br>
+		
+<br><a  class="http-header" href="./register.php">Register</a>
 	</form>
-<a href="./logout.php">Logout</a>
-<a href="./register.php">Register</a>
-<a href="http://localhost/login/oauth.php?app_id=6795994276732903">Loginhhh</a>
+
 </body>
 </html>

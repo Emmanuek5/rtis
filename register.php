@@ -5,7 +5,8 @@ include 'config.php';
 if (isset($_POST['session'])) {
 	
   $name = $_POST['name'];
-  $password = $_POST['password'];
+  $password1 = $_POST['password'];
+  $password = password_hash($password1,PASSWORD_DEFAULT);
   $email = $_POST['email'];
   $filename = $_FILES['file']['name'];
   $file_tmp = $_FILES['file']['tmp_name'];
@@ -61,10 +62,19 @@ if (mysqli_num_rows($result) > 0) {
 	<form method="POST" enctype="multipart/form-data">
 		<input type="text" name="name">
 		<input type="password" name="password">
-		<input type="file" name="file">
+		<input type="email" name="email">
+		<input type="file" name="file" accept=".jpg,.png,.jpeg,.gif">
 		<input type="submit" name="session">
 
 	</form>
 <a href="./login.php">Login</a>
 </body>
 </html>
+.http-header{
+text-decoration: none;
+text-transform: capitalize;
+}
+.http-header:visited{
+	color: royalblue;
+	
+}

@@ -8,6 +8,8 @@ function check_login($con)
 		$result = mysqli_query($con,$sql);
 		$user_data = mysqli_fetch_assoc($result);
 
+		$logedin = 'True';
+
 		return $user_data;
 	}else{
 		header('location: login.php');

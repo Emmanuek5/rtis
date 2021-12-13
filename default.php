@@ -26,15 +26,14 @@ if (isset($_SESSION['success'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Security</title>
 </head>
-<body>
-
-	<h1>Welcome , </h1><?php 
+<body><?php 
 	if (isset($_SESSION['success'])) {
 		// code...
 	
 
-	 ?><p><?php echo($_SESSION['success']['name']) ?></p><?php } ?>
-
+	 ?>
+	<h1>Welcome , <?php echo($_SESSION['success']['name']) ?></h1>
+<?php } ?>
 	 <?php 
 	if (isset($a['login'])) {
 		// code...

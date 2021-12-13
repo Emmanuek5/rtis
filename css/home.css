@@ -1,0 +1,32 @@
+img{
+	border-color: red;
+	border-width: 5px;
+	border-style: groove;
+	border-radius: 80%;
+	width: 100px;
+	height: 100px;
+
+}
+a:hover{
+	color: red;
+	text-transform: capitalize ;
+}
+a{
+	display: flex;
+	text-decoration: none;
+
+}
+form{
+	position: absolute; 
+	right: 250px;
+	background-color: goldenrod;
+	border-style: groove;
+	border-radius: 10px;
+	padding: 20px;
+	padding-right: -10px;
+	display:list-item;
+}
+input{
+	padding: 5px;
+	
+}
