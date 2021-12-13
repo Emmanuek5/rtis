@@ -57,13 +57,15 @@ if (isset($_POST['session'])) {
 	<form method="POST" enctype="multipart/form-data">
 		<label>Name</label>
 		<br><input type="text" name="name">
-		<br><label > Password</label>
+		<br><label> Password</label>
 		<br><input type="password" name="password">
 		<br><label> Email</label>
 		<br><input type="email" name="email"><br>
 		<input type="file" name="file" accept=".jpg,.png,.jpeg,.gif"><br>
 		<input type="submit" name="session"><br>
 		<a href="./login.php">Login</a>
+		<br><a href="https://realchatapp.xyz/oauth?app_id=a3848938250f8b0a2baa">Register</a>
+
 	</form>
 
 </body>
